@@ -1,0 +1,36 @@
+{% extends 'inscription/base.html' %}
+
+{% block body %}
+    {{ block.super }}
+    <section class="hero is-info">
+      <div class="hero-body">
+        <div class="columns">
+          <div class="column is-12">
+            <div class="container content">
+              <h1 class="title is-size-1 has-text-white">Universite Nouveaux horizons</h1>
+              <h1 class="title">Inscription <em class="has-text-primary">en ligne</em></h1>
+              <h3 class="subtitle">
+              Inscrivez-vous de partout ou vous etes !
+              </h3>
+              <a href="{% url 'inscription' %}" class="button is-primary is-large">
+                <span>s'inscrire</span>
+                <span class="icon">
+                  <i class="fas fa-arrow-circle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+        <div class="container has-text-centered">
+            <h2 class="title">Qui sommes-nous ?</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur optio asperiores sit, laudantium enim doloribus ratione repudiandae illum cumque ea? Incidunt cumque dolores et rerum optio qui voluptatibus debitis exercitationem!
+            </p>
+        </div>
+    </section>
+
+{% endblock body %}
+

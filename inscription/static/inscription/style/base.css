@@ -1,0 +1,12 @@
+
+#logo-img {
+    -webkit-transform:scale(1.8); /* Safari et Chrome */
+    -moz-transform:scale(1.8); /* Firefox */
+    -ms-transform:scale(1.8); /* Internet Explorer 9 */
+    -o-transform:scale(1.8); /* Opera */
+    transform:scale(1.8);
+}
+
+.navbar {
+    border-bottom: 3px solid #047ec9;    
+}

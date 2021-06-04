@@ -1,0 +1,231 @@
+{% extends 'inscription/base.html' %}
+
+{% load static %}
+
+{% block liens %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'inscription/style/inscription.css' %}">
+{% endblock liens %}
+
+{% block body %}
+    {{ block.super }}
+    <br>
+    <section class="container">
+        <h1 class="title is-2 has-text-info">
+            Remplissez le formulaire ci-dessous
+        </h1>
+        <hr>
+        <form class="mb-5">
+            <div id="fpartie1">
+                <h1 class="title is-4">Premiere partie</h1>
+                <hr>
+                <div class="columns">
+                    <div class="column">
+                        <div class="field">
+                            <label class="label">Nom</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="ex: Fund">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Post-nom</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="ex: Rubemb">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Prenom</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="ex: Ruth">
+                            </div>
+                        </div>
+                        
+                        <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control">
+                                <input class="input" type="email" placeholder="ex: ruthrubemb@gmail.com">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="field">
+                            <label class="label">Telephone</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="ex: +243 99 509 6060">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Adresse</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="ex: 51, Avenue Mohamed, Q. Gambela">
+                            </div>
+                        </div>
+                        
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <label class="label">Date de naissance</label>
+                                    <div class="control">
+                                        <input class="input" type="date">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="column">
+                                <div class="field">
+                                    <label class="label">Lieu de naissance</label>
+                                    <div class="control">
+                                        <input class="input" type="text" placeholder="ex: Lubumbashi">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                                <div class="control">
+                                    <label class="label">Faculte</label>
+                                    <div class="select">
+                                        <select id="facultes">
+                                            <option value="sg">Sciences des gestions</option>
+                                            <option value="si">Sciences informatiques</option>
+                                            <option value="st">Sciences technologiques</option>
+                                            <option value="sa">Sciences des aliments</option>
+                                            <option value="se">Sciences de l'environement</option>
+                                            <option value="ar">Architecture</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="field">
+                                    <label class="label">Sexe</label>
+                                    <div class="control">
+                                        <label class="radio">
+                                        <input type="radio" name="sexe" checked>
+                                        Homme
+                                        </label>
+                                        <label class="radio">
+                                        <input type="radio" name="sexe">
+                                        Femme
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="is-pulled-right mb-5">
+                    <button class="button is-danger" type="button">Annuler</button>
+                    <button class="button is-primary" id="sp2" type="button">Suivant</button>
+                </div>
+            </div>
+            <div id="fpartie2">
+                <h1 class="title is-3">Deuxieme partie</h1>
+                <hr>
+                <div class="columns">
+                    <div class="column">
+                        <div class="control">
+                            <label class="label">Promotion</label>
+                            <div class="select">
+                                <select>
+                                    <option value="m2">Master 2</option>
+                                    <option value="m1">Master 1</option>
+                                    <option value="l3">Licence 3</option>
+                                    <option value="l2">Licence 2</option>
+                                    <option value="l1">Licence 1</option>
+                                    <option value="pp">Preparatoire</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="control">
+                            <label class="label">Filiere</label>
+                            <div class="select">
+                                <select id="filieres">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="is-pulled-right">
+                    <button class="button is-danger" type="button">Annuler</button>
+                    <button class="button is-primary" type="button" id="pp1">retour</button>
+                    <button type="button" class="button is-info" id="sp3">Suivant</button>
+                    
+                </div>
+            </div> 
+
+            <div id="fpartie3">
+                <h1 class="title is-3">Troisieme partie</h1>
+                <hr>
+                <div class="columns">
+                    <div class="column">
+                        <div class="field">
+                            <label for="" class="label">Photo passeport</label>
+                            <div class="file">
+                                <label class="file-label">
+                                    <input class="file-input" type="file" name="photo_passeport">
+                                    <span class="file-cta">
+                                    <span class="file-icon">
+                                        <i class="fas fa-upload"></i>
+                                    </span>
+                                    <span class="file-label">
+                                        Choisir une photo
+                                    </span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="" class="label">Journal</label>
+                            <div class="file">
+                                <label class="file-label">
+                                    <input class="file-input" type="file" name="journal">
+                                    <span class="file-cta">
+                                    <span class="file-icon">
+                                        <i class="fas fa-upload"></i>
+                                    </span>
+                                    <span class="file-label">
+                                        Choisir un fichier
+                                    </span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="" class="label">Bulletin 6eme</label>
+                            <div class="file">
+                                <label class="file-label">
+                                    <input class="file-input" type="file" name="bultin_6">
+                                    <span class="file-cta">
+                                    <span class="file-icon">
+                                        <i class="fas fa-upload"></i>
+                                    </span>
+                                    <span class="file-label">
+                                        Choisir un fichier
+                                    </span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                        
+                </div>
+                <div class="is-pulled-right">
+                    <button class="button is-danger" type="button">Annuler</button>
+                    <button class="button is-primary" id="pp2" type="button">Precedent</button>
+                    <button class="button is-info">Valider</button>
+                </div>
+                <br>
+            </div>
+        </form>
+    </section>
+    {% endblock body %}
+
+    {% block script %}
+        {{ block.super }}
+        <script src="{% static 'inscription/js/inscription.js' %}"></script>
+    {% endblock script %}

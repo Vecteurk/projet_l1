@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr" class="has-navbar-fixed-top">
+<head>
+    {% block liens %}
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="{% static 'inscription/style/bulma.min.css' %}">
+      <link rel="stylesheet" href="{% static 'inscription/style/base.css' %}">
+      <link rel="stylesheet" href="{% static 'inscription/style/fontawesome/css/all.css' %}">
+    {% endblock liens %}
+
+    <title>
+        {% block titre %}
+            Accueil
+        {% endblock titre %}
+    
+    </title>
+</head>
+<body>
+
+<nav class="navbar is-info is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item">
+      <img src="{% static 'inscription/images/logo1.png' %}" id="logo-img"><span class="has-text-white has-text-weight-bold is-size-4"> inscription </span>  <span class="has-text-primary has-text-weight-bold is-size-4">Online</span>
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="{% url 'index' %}">
+        Accueil
+      </a>
+
+      <a class="navbar-item" href="{% url 'inscription' %}">
+        inscription
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Plus
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="{% url 'apropos' %}">
+            A propos
+          </a>
+          <a class="navbar-item" href="{% url 'contact' %}">
+            Contact
+          </a>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          
+          <a class="button is-primary" href="/admin/">
+            Connexion
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+{% block body %}
+
+
+{% endblock body %}
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+        <strong>inscriptionOnline</strong> par <a>UNH</a>
+        <a>...</a>
+        </p>
+    </div>
+</footer>
+
+{% block script %}
+    <script src="{% static 'inscription/js/base.js' %}"></script>
+
+{% endblock script %}
+</body>
+</html>
